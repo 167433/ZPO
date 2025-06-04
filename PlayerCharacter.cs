@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ZPO
 {
-    internal class PlayerCharacter: Character
+    internal class PlayerCharacter: Character, IInteract
     {
         public string characterName {  get; set; }
         public int  characterLeverl {  get; set; }
@@ -44,7 +44,12 @@ namespace ZPO
                 IncludeFields = true
             };
             string json = JsonSerializer.Serialize(this, options);
-            File.WriteAllText(filePath, json);
+            if (string.IsNullOrWhiteSpace(this.characterName))
+            {
+                throw new InvalidOperationException("Imię postaci nie może być puste.");
+            }
+            File.WriteAllText($"E:\\ZPO Projekt\\ZPO\\{filePath}", json);
+            
         }
 
         public static PlayerCharacter LoadFromJson(string filePath)
@@ -57,31 +62,49 @@ namespace ZPO
             string json = File.ReadAllText(filePath);
             return JsonSerializer.Deserialize<PlayerCharacter>(json, options);
         }
-            public void SetAbility(string key, int bonus)
+            public void SetAbility(string key, int stat)
         {
             switch (key.ToLower())
             {
                 case "strength":
-                    this.Strength += bonus;
+                    this.Strength = stat;
                     break;
                 case "dexterity":
-                    this.Dexterity += bonus;
+                    this.Dexterity = stat;
                     break;
                 case "constitution":
-                    this.Constitution += bonus;
+                    this.Constitution = stat;
                     break;
                 case "intelligence":
-                    this.Intelligence += bonus;
+                    this.Intelligence = stat;
                     break;
                 case "wisdom":
-                    this.Wisdom += bonus;
+                    this.Wisdom = stat;
                     break;
                 case "charisma":
-                    this.Charisma += bonus;
+                    this.Charisma = stat;
                     break;
                 default:
                     throw new ArgumentException($"Unknown ability name: {key}");
             }
+        }
+
+        public int subStractHP()
+        {
+           return this.HitPoints =- 1;
+        }
+
+        public int addHP()
+        {
+            return this.HitPoints += 1;
+        }
+
+        public int attackRoll()
+        {
+            Random rnd = new Random();
+            int attRoll = this.Strength + rnd.Next(1, 20);
+           MessageBox.Show($"WYNIK ATAKTU TO: {attRoll} ");
+            return attRoll;
         }
     }
 }

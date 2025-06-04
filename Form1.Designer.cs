@@ -56,11 +56,12 @@
             txtBoxCON = new TextBox();
             txtBoxINT = new TextBox();
             txtBoxCHA = new TextBox();
-            btnBack = new Button();
             menuStrip1 = new MenuStrip();
             graczToolStripMenuItem = new ToolStripMenuItem();
             nPCToolStripMenuItem = new ToolStripMenuItem();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            btnSaveToJSON = new Button();
+            btnInteract = new Button();
             classSelectPanel.SuspendLayout();
             groupBox1.SuspendLayout();
             boxStats.SuspendLayout();
@@ -69,7 +70,7 @@
             // 
             // BtnNext
             // 
-            BtnNext.Location = new Point(713, 405);
+            BtnNext.Location = new Point(16, 405);
             BtnNext.Name = "BtnNext";
             BtnNext.Size = new Size(75, 23);
             BtnNext.TabIndex = 0;
@@ -91,7 +92,7 @@
             // 
             // textTest
             // 
-            textTest.Location = new Point(401, 21);
+            textTest.Location = new Point(453, 10);
             textTest.Name = "textTest";
             textTest.Size = new Size(305, 342);
             textTest.TabIndex = 34;
@@ -222,7 +223,7 @@
             boxStats.Controls.Add(txtBoxINT);
             boxStats.Controls.Add(txtBoxCHA);
             boxStats.Enabled = false;
-            boxStats.Location = new Point(721, 3);
+            boxStats.Location = new Point(398, 3);
             boxStats.Name = "boxStats";
             boxStats.Size = new Size(39, 360);
             boxStats.TabIndex = 29;
@@ -380,15 +381,6 @@
             txtBoxCHA.Text = "0";
             txtBoxCHA.TextAlign = HorizontalAlignment.Center;
             // 
-            // btnBack
-            // 
-            btnBack.Location = new Point(12, 405);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(75, 23);
-            btnBack.TabIndex = 3;
-            btnBack.Text = "Cofnij";
-            btnBack.UseVisualStyleBackColor = true;
-            // 
             // menuStrip1
             // 
             menuStrip1.Items.AddRange(new ToolStripItem[] { graczToolStripMenuItem, nPCToolStripMenuItem });
@@ -411,17 +403,39 @@
             nPCToolStripMenuItem.Size = new Size(43, 20);
             nPCToolStripMenuItem.Text = "NPC";
             // 
+            // btnSaveToJSON
+            // 
+            btnSaveToJSON.Location = new Point(559, 405);
+            btnSaveToJSON.Name = "btnSaveToJSON";
+            btnSaveToJSON.Size = new Size(124, 23);
+            btnSaveToJSON.TabIndex = 5;
+            btnSaveToJSON.Text = "ZAPISZ DO JSON";
+            btnSaveToJSON.UseVisualStyleBackColor = true;
+            btnSaveToJSON.Click += button1_Click_2;
+            // 
+            // btnInteract
+            // 
+            btnInteract.Location = new Point(228, 405);
+            btnInteract.Name = "btnInteract";
+            btnInteract.Size = new Size(142, 23);
+            btnInteract.TabIndex = 6;
+            btnInteract.Text = "Interakcja Interfejs";
+            btnInteract.UseVisualStyleBackColor = true;
+            btnInteract.Click += button2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(btnBack);
+            Controls.Add(btnInteract);
+            Controls.Add(btnSaveToJSON);
             Controls.Add(classSelectPanel);
             Controls.Add(BtnNext);
             Controls.Add(menuStrip1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             classSelectPanel.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
@@ -437,7 +451,6 @@
 
         private Button BtnNext;
         private Panel classSelectPanel;
-        private Button btnBack;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem graczToolStripMenuItem;
         private ToolStripMenuItem nPCToolStripMenuItem;
@@ -468,5 +481,7 @@
         private Label label3;
         private GroupBox groupBox1;
         private RichTextBox textTest;
+        private Button btnSaveToJSON;
+        private Button btnInteract;
     }
 }

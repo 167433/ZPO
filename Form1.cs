@@ -15,6 +15,8 @@ namespace ZPO
         public Form1()
         {
             InitializeComponent();
+            btnInteract.Visible = false;
+            btnSaveToJSON.Visible = false;
 
             this.BackColor = AppConfig.Instance.GetColor();
 
@@ -83,11 +85,14 @@ namespace ZPO
             {
                 groupBox1.Enabled = false;
                 boxStats.Enabled = true;
+                btnInteract.Visible = true;
+                btnSaveToJSON.Visible = true;
+
                 Race selectedRace = (Race)comboBoxRaces.SelectedItem;
                 GameClass selectedClass = (GameClass)cbClassName.SelectedItem;
                 List<GameClass> gameClasses = new List<GameClass>();
                 gameClasses.Add(selectedClass);
-                playerCharacter = new PlayerCharacter(textBox1.Text, 1, gameClasses,"Tragiczna historia","Dawno temu wydarzyło się coś tragicznego") ;
+                playerCharacter = new PlayerCharacter(textBox1.Text, 1, gameClasses, "Tragiczna historia", "Dawno temu wydarzyło się coś tragicznego");
                 textTest.Text = playerCharacter.characterName.ToString();
                 string jsonTest = JsonSerializer.Serialize(playerCharacter, new JsonSerializerOptions { WriteIndented = true });
                 textTest.Text = jsonTest;
@@ -314,6 +319,33 @@ namespace ZPO
         private void groupBox1_Enter_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+                playerCharacter.SaveToJson(playerCharacter.characterName);
+            }
+            catch (InvalidOperationException ex)
+            {
+                MessageBox.Show("Twoja postać nie ma imienia! A musi mieć");
+
+                groupBox1.Enabled = true;
+                boxStats.Enabled = false;
+                btnInteract.Visible = false;
+                btnSaveToJSON.Visible = false;
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            playerCharacter.attackRoll();
         }
     }
 }

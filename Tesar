@@ -1,0 +1,33 @@
+{
+  "characterName": "Tesar",
+  "characterLeverl": 1,
+  "characterClasses": [
+    {
+      "level": 0,
+      "Description": "Czarodzieje to mistrzowie magii, w\u0142adaj\u0105 zakl\u0119ciami zapisanymi w swoich ksi\u0119gach.",
+      "Name": "Wizard",
+      "HitDie": 6,
+      "PrimaryStat": "Intelligence",
+      "SavingThrows": [
+        "Intelligence",
+        "Wisdom"
+      ],
+      "Proficiencies": [
+        "Arcana",
+        "History"
+      ],
+      "Abilities": [
+        "Spellcasting",
+        "Arcane Recovery"
+      ],
+      "BaseSpeedModifier": 0,
+      "StatBonuses": {
+        "Intelligence": 1
+      }
+    }
+  ],
+  "BackStory": {
+    "Name": "Tragiczna historia",
+    "Description": "Dawno temu wydarzy\u0142o si\u0119 co\u015B tragicznego"
+  }
+}
