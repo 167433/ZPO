@@ -63,6 +63,7 @@
             btnSaveToJSON = new Button();
             btnInteract = new Button();
             btnLinQ = new Button();
+            btnGenT = new Button();
             classSelectPanel.SuspendLayout();
             groupBox1.SuspendLayout();
             boxStats.SuspendLayout();
@@ -426,7 +427,7 @@
             // 
             // btnLinQ
             // 
-            btnLinQ.Location = new Point(411, 405);
+            btnLinQ.Location = new Point(375, 405);
             btnLinQ.Name = "btnLinQ";
             btnLinQ.Size = new Size(75, 23);
             btnLinQ.TabIndex = 7;
@@ -434,11 +435,22 @@
             btnLinQ.UseVisualStyleBackColor = true;
             btnLinQ.Click += button1_Click_3;
             // 
+            // btnGenT
+            // 
+            btnGenT.Location = new Point(466, 405);
+            btnGenT.Name = "btnGenT";
+            btnGenT.Size = new Size(75, 23);
+            btnGenT.TabIndex = 8;
+            btnGenT.Text = "Ekwipunek<T>";
+            btnGenT.UseVisualStyleBackColor = true;
+            btnGenT.Click += button1_Click_4;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnGenT);
             Controls.Add(btnLinQ);
             Controls.Add(btnInteract);
             Controls.Add(btnSaveToJSON);
@@ -496,5 +508,6 @@
         private Button btnSaveToJSON;
         private Button btnInteract;
         private Button btnLinQ;
+        private Button btnGenT;
     }
 }

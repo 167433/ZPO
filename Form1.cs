@@ -18,6 +18,7 @@ namespace ZPO
             btnInteract.Visible = false;
             btnSaveToJSON.Visible = false;
             btnLinQ.Visible = false;
+            btnGenT.Visible = false;
 
             this.BackColor = AppConfig.Instance.GetColor();
 
@@ -89,7 +90,7 @@ namespace ZPO
                 btnInteract.Visible = true;
                 btnSaveToJSON.Visible = true;
                 btnLinQ.Visible = true;
-
+                btnGenT.Visible = true;
                 Race selectedRace = (Race)comboBoxRaces.SelectedItem;
                 GameClass selectedClass = (GameClass)cbClassName.SelectedItem;
                 List<GameClass> gameClasses = new List<GameClass>();
@@ -354,6 +355,14 @@ namespace ZPO
         private void button1_Click_3(object sender, EventArgs e)
         {
             MessageBox.Show($"{playerCharacter.getAmountOfCasterClass()} Tyle jest magi w obecnej postaci");
+        }
+
+        private void button1_Click_4(object sender, EventArgs e)
+        {
+            Ekwipunek<string> ekwipunek = new Ekwipunek<string>();
+            ekwipunek.Dodaj("Miecz");
+            ekwipunek.Dodaj("Tarcza");
+            ekwipunek.PokazWszystkie();
         }
     }
 }
