@@ -1,0 +1,20 @@
+[
+  {
+    "Name": "Elf",
+    "Description": "Szybcy, zwinni i długo żyjący mieszkańcy lasów.",
+    "StatBonuses": {
+      "Dexterity": 2,
+      "Intelligence": 1
+    },
+    "Immunities": [ "Sleep" ]
+  },
+  {
+    "Name": "Ork",
+    "Description": "Silni wojownicy, znani z brutalnej siły.",
+    "StatBonuses": {
+      "Strength": 2,
+      "Constitution": 1
+    },
+    "Immunities": []
+  }
+]

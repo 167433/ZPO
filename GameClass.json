@@ -1,0 +1,29 @@
+[
+  {
+    "Name": "Wizard",
+    "HitDie": 6,
+    "PrimaryStat": "Intelligence",
+    "SavingThrows": [ "Intelligence", "Wisdom" ],
+    "Proficiencies": [ "Arcana", "History" ],
+    "Abilities": [ "Spellcasting", "Arcane Recovery" ],
+    "BaseSpeedModifier": 0,
+    "StatBonuses": {
+      "Intelligence": 1
+    },
+    "Description": "Czarodzieje to mistrzowie magii, władają zaklęciami zapisanymi w swoich księgach."
+  },
+  {
+    "Name": "Barbarian",
+    "HitDie": 12,
+    "PrimaryStat": "Strength",
+    "SavingThrows": [ "Strength", "Constitution" ],
+    "Proficiencies": [ "Athletics", "Survival" ],
+    "Abilities": [ "Rage", "Unarmored Defense" ],
+    "BaseSpeedModifier": 10,
+    "StatBonuses": {
+      "Strength": 2
+    },
+    "Description": "ZABIĆ! ZNISZCZYĆ! TŁUC!"
+
+  }
+]
