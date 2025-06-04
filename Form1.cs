@@ -17,6 +17,7 @@ namespace ZPO
             InitializeComponent();
             btnInteract.Visible = false;
             btnSaveToJSON.Visible = false;
+            btnLinQ.Visible = false;
 
             this.BackColor = AppConfig.Instance.GetColor();
 
@@ -87,6 +88,7 @@ namespace ZPO
                 boxStats.Enabled = true;
                 btnInteract.Visible = true;
                 btnSaveToJSON.Visible = true;
+                btnLinQ.Visible = true;
 
                 Race selectedRace = (Race)comboBoxRaces.SelectedItem;
                 GameClass selectedClass = (GameClass)cbClassName.SelectedItem;
@@ -335,6 +337,7 @@ namespace ZPO
                 boxStats.Enabled = false;
                 btnInteract.Visible = false;
                 btnSaveToJSON.Visible = false;
+                btnLinQ.Visible = false;
             }
         }
 
@@ -346,6 +349,11 @@ namespace ZPO
         private void button2_Click(object sender, EventArgs e)
         {
             playerCharacter.attackRoll();
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+            MessageBox.Show($"{playerCharacter.getAmountOfCasterClass()} Tyle jest magi w obecnej postaci");
         }
     }
 }

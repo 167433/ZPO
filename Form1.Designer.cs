@@ -62,6 +62,7 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             btnSaveToJSON = new Button();
             btnInteract = new Button();
+            btnLinQ = new Button();
             classSelectPanel.SuspendLayout();
             groupBox1.SuspendLayout();
             boxStats.SuspendLayout();
@@ -415,7 +416,7 @@
             // 
             // btnInteract
             // 
-            btnInteract.Location = new Point(228, 405);
+            btnInteract.Location = new Point(195, 405);
             btnInteract.Name = "btnInteract";
             btnInteract.Size = new Size(142, 23);
             btnInteract.TabIndex = 6;
@@ -423,11 +424,22 @@
             btnInteract.UseVisualStyleBackColor = true;
             btnInteract.Click += button2_Click;
             // 
+            // btnLinQ
+            // 
+            btnLinQ.Location = new Point(411, 405);
+            btnLinQ.Name = "btnLinQ";
+            btnLinQ.Size = new Size(75, 23);
+            btnLinQ.TabIndex = 7;
+            btnLinQ.Text = "LINQ";
+            btnLinQ.UseVisualStyleBackColor = true;
+            btnLinQ.Click += button1_Click_3;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnLinQ);
             Controls.Add(btnInteract);
             Controls.Add(btnSaveToJSON);
             Controls.Add(classSelectPanel);
@@ -483,5 +495,6 @@
         private RichTextBox textTest;
         private Button btnSaveToJSON;
         private Button btnInteract;
+        private Button btnLinQ;
     }
 }
