@@ -1,7 +1,9 @@
 Pomysł był ambitny i wraz z pracą nad nim zaczął się rozwijać ale nie skończyłbym wersji porządnej i faktycznie użytkowej na czas, jest więc wersja pokazująca możliwości
 
+Również nei zauważyłem, że moje komity z VS nie wychodzą bo nie miałem ustawionej auto synchronizacji dlatego projekt wrzucony praktycznie cały w jeden dzień.
+
 Dziedziczenie jest w playerCharacter po Character(abstrakcyjna)
-Polimorfiz Character ma pola protected (UWAGA!!! za późno się zorientowałem że nie będą się zapisywać do JSON. Nie mam pomysłu jak inaczej przedstawić polimorfizm :/)
+Polimorfiz Character ma pola protected (UWAGA!!! za późno się zorientowałem że nie będą się zapisywać do JSON. Nie mam pomysłu jak inaczej przedstawić polimorfizm :/  )
 Własny typ wyjątków ExceptionGeralt, Imię nie może być "Geralt"
 Obsługa wyjątków w warstwie logiki i prezentacji, nie można zapisać postaci która ma puste imię
 Agregacja w playerCharacter List<GameClass>
